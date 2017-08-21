@@ -13,13 +13,17 @@ namespace ToDoList.Controllers
       return View();
     }
     [HttpGet("/tasks")]
-    public ActionResult Tasks(string buttonSortType)
+    public ActionResult Tasks()
     {
-        string newSortType = buttonSortType;
-        Console.WriteLine("THE NEW SORT TYPE IS" + newSortType);
-
+      List<Task> allTasks = Task.GetAll("Description");
+      return View(allTasks);
+    }
+    [HttpPost("/tasks")]
+    public ActionResult TasksPost()
+    {
+       string newSortType = Request.Form["buttonSortType"];
         List<Task> allTasks = Task.GetAll(newSortType);
-        return View(allTasks);
+        return View("Tasks",allTasks);
     }
     [HttpGet("/categories")]
     public ActionResult Categories()
@@ -71,7 +75,7 @@ namespace ToDoList.Controllers
         Dictionary<string, object> model = new Dictionary<string, object>();
         Category SelectedCategory = Category.Find(id);
         List<Task> CategoryTasks = SelectedCategory.GetTasks();
-        List<Task> AllTasks = Task.GetAll("oldToNew");
+        List<Task> AllTasks = Task.GetAll("Description");
         model.Add("category", SelectedCategory);
         model.Add("categoryTasks", CategoryTasks);
         model.Add("allTasks", AllTasks);

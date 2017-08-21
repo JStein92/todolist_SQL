@@ -97,13 +97,13 @@ namespace ToDoList.Models
             MySqlConnection conn = DB.Connection();
             conn.Open();
             var cmd = conn.CreateCommand() as MySqlCommand;
-            if (sortType == "oldToNew")
+            if (sortType == "DueDate")
             {
                 cmd.CommandText = @"SELECT * FROM tasks ORDER BY dueDate ASC;";
             }
-            else
+            else if(sortType == "Description")
             {
-                cmd.CommandText = @"SELECT * FROM tasks ORDER BY dueDate DESC;";
+                cmd.CommandText = @"SELECT * FROM tasks ORDER BY description ASC;";
             }
 
             var rdr = cmd.ExecuteReader() as MySqlDataReader;
