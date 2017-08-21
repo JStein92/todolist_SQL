@@ -1,0 +1,8 @@
+<h1>Completed tasks</h1>
+
+@foreach(var task in @Model)
+{
+  <li><a href="tasks/@task.GetId()">@task.GetDescription()</a></li>
+}
+
+<a href="/">Go home</a>

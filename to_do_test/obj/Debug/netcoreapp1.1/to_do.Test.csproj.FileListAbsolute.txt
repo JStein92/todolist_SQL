@@ -1,0 +1,4 @@
+/Users/Guest/Desktop/todolist_SQL/to_do_test/bin/Debug/netcoreapp1.1/to_do.Test.deps.json
+/Users/Guest/Desktop/todolist_SQL/to_do_test/bin/Debug/netcoreapp1.1/to_do.Test.runtimeconfig.json
+/Users/Guest/Desktop/todolist_SQL/to_do_test/bin/Debug/netcoreapp1.1/to_do.Test.runtimeconfig.dev.json
+/Users/Guest/Desktop/todolist_SQL/to_do_test/obj/Debug/netcoreapp1.1/to_do.Test.AssemblyInfo.cs

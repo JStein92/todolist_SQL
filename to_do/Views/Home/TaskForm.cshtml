@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Add a new task</h1>
+<form action="/tasks/new" method="post">
+  <label for="task-description">Task description:</label>
+  <input id="task-description" name="task-description" type="text">
+
+  <label for="task-dueDate">Task due Date:</label>
+  <input id="task-dueDate" name="task-dueDate" type="Date">
+
+  <button type="submit">Add new task</button>
+</form>
+<p><a href="/">Back home</a></p>
+<p><a href="/tasks">View all tasks</a></p>
